@@ -1,0 +1,705 @@
+/* Thiết lập màu sắc và kiểu chữ */
+:root {
+    --primary-color: #033dff;
+    /* Màu chính */
+    --secondary-color: #030303;
+    /* Màu phụ */
+    --bg-color: #ffffff;
+    /* Màu nền */
+    --text-color: #000000;
+    /* Màu chữ */
+}
+
+/* Toàn bộ trang */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+}
+
+.navbar-brand img {
+    height: 60px;
+    /* Kích thước logo */
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ccc;
+}
+
+/* Dropdown Menu */
+.nav-item.dropdown .dropdown-menu {
+    background-color: var(--primary-color);
+}
+
+.nav-item.dropdown .dropdown-item {
+    color: white;
+}
+
+.nav-item.dropdown .dropdown-item:hover {
+    background-color: var(--primary-color);
+    /* Màu khi hover */
+}
+
+/* Điều chỉnh cho các thiết bị nhỏ */
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+    }
+
+    .navbar-toggler {
+        border-color: white;
+    }
+
+    .navbar-toggler-icon {
+        background-color: white;
+    }
+}
+
+/* Điều chỉnh cho tablet và các thiết bị có màn hình rộng hơn */
+@media (max-width: 991px) {
+    .navbar-nav {
+        font-size: 0.9rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding: 8px 12px;
+    }
+}
+
+/* Chỉnh sửa phần Carousel */
+#carouselBanner {
+    position: relative;
+    width: 100%;
+    height: 400px;  /* Chiều cao của banner */
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Giữ tỷ lệ ảnh và cắt nếu cần thiết */
+    object-position: center;  /* Đảm bảo hình ảnh luôn được căn giữa */
+}
+
+/* Điều chỉnh cho thiết bị di động */
+@media (max-width: 767px) {
+    #carouselBanner {
+        height: 250px; /* Giảm chiều cao trên điện thoại */
+    }
+}
+
+/* Chỉnh sửa cho Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px; /* Đặt vị trí indicators ở dưới */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa indicators */
+    z-index: 10; /* Đảm bảo indicators luôn hiển thị trên ảnh */
+    text-align: center;
+}
+
+.carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.6); /* Màu nền chỉ là trắng mờ */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .active {
+    background-color: var(--primary-color); /* Màu khi active */
+}
+
+.carousel-indicators li:hover {
+    background-color: var(--primary-color); /* Màu hover */
+}
+
+
+@keyframes zoom {
+    0% {
+        transform: scale(.5);
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1)
+    }
+}
+
+@keyframes lucidgenzalo {
+    0% {
+        transform: rotate(-25deg)
+    }
+
+    50% {
+        transform: rotate(25deg)
+    }
+}
+
+.jscroll-to-top {
+    bottom: 100px
+}
+
+.fcta-zalo-ben-trong-nut svg path {
+    fill: #fff
+}
+
+.fcta-zalo-vi-tri-nut {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 999
+}
+
+.fcta-zalo-nen-nut,
+div.fcta-zalo-mess {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16)
+}
+
+.fcta-zalo-nen-nut {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #0068ff;
+    border-radius: 50%;
+    position: relative
+}
+
+.fcta-zalo-nen-nut::after,
+.fcta-zalo-nen-nut::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #0068ff;
+    background: #0068ff80;
+    z-index: -1;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: zoom 1.9s linear infinite
+}
+
+.fcta-zalo-nen-nut::after {
+    animation-delay: .4s
+}
+
+.fcta-zalo-ben-trong-nut,
+.fcta-zalo-ben-trong-nut i {
+    transition: all 1s
+}
+
+.fcta-zalo-ben-trong-nut {
+    position: absolute;
+    text-align: center;
+    width: 60%;
+    height: 60%;
+    left: 10px;
+    bottom: 25px;
+    line-height: 70px;
+    font-size: 25px;
+    opacity: 1
+}
+
+.fcta-zalo-ben-trong-nut i {
+    animation: lucidgenzalo 1s linear infinite
+}
+
+.fcta-zalo-nen-nut:hover .fcta-zalo-ben-trong-nut,
+.fcta-zalo-text {
+    opacity: 0
+}
+
+.fcta-zalo-nen-nut:hover i {
+    transform: scale(.5);
+    transition: all .5s ease-in
+}
+
+.fcta-zalo-text a {
+    text-decoration: none;
+    color: #fff
+}
+
+.fcta-zalo-text {
+    position: absolute;
+    top: 6px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    transform: scaleX(-1);
+    transition: all .5s;
+    line-height: 1.5
+}
+
+.fcta-zalo-nen-nut:hover .fcta-zalo-text {
+    transform: scaleX(1);
+    opacity: 1
+}
+
+div.fcta-zalo-mess {
+    position: fixed;
+    bottom: 29px;
+    right: 58px;
+    z-index: 99;
+    background: #fff;
+    padding: 7px 25px 7px 15px;
+    color: #0068ff;
+    border-radius: 50px 0 0 50px;
+    font-weight: 700;
+    font-size: 15px
+}
+
+.fcta-zalo-mess span {
+    color: #0068ff !important
+}
+
+span#fcta-zalo-tracking {
+    font-family: Roboto;
+    line-height: 1.5
+}
+
+.fcta-zalo-text {
+    font-family: Roboto
+}
+
+
+
+/* Phần Giới Thiệu */
+.gioi-thieu {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.gioi-thieu h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    /* Màu chữ tiêu đề */
+}
+
+.gioi-thieu p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+.gioi-thieu .container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.gioi-thieu .col-md-6 {
+    margin-bottom: 30px;
+}
+
+.gioi-thieu img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bọc chữ vào khung */
+.gioi-thieu-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gioi-thieu-content h2 {
+    color: var(--primary-color);
+    /* Màu chữ tiêu đề */
+    margin-bottom: 15px;
+}
+
+.gioi-thieu-content p {
+    color: var(--primary-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Tạo hiệu ứng cho hình ảnh và nội dung */
+.gioi-thieu-content:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.gioi-thieu img:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Phần Dịch Vụ */
+.dich-vu {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+.dich-vu h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* Khung Dịch Vụ */
+.service-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    height: 350px;
+    /* Đảm bảo khung có chiều cao cố định */
+}
+
+/* Hiệu ứng khi hover */
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+/* Ảnh dịch vụ thành hình tròn */
+.service-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    /* Màu viền */
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề dịch vụ */
+.service-title {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: var(--primary-color);
+}
+
+/* Mô tả dịch vụ */
+.service-description {
+    font-size: 1rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+    height: 80px;
+    /* Đảm bảo chiều cao của mô tả cố định */
+    overflow: hidden;
+    /* Cắt bớt phần chữ vượt ra ngoài */
+    text-overflow: ellipsis;
+    /* Thêm dấu ba chấm khi nội dung bị cắt */
+    white-space: nowrap;
+    /* Đảm bảo nội dung không xuống dòng */
+}
+
+/* Điều chỉnh cho các màn hình nhỏ */
+@media (max-width: 768px) {
+    .service-title {
+        font-size: 1.2rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+
+    .service-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* Phần Tiêu Chuẩn Chứng Nhận Quốc Gia */
+.chungnhan {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+.chungnhan .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* Khung Chứng Nhận */
+.chungnhan-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.chungnhan-item:hover {
+    transform: scale(1.05);
+}
+
+/* Phần Tiêu Chuẩn Chứng Nhận Quốc Gia */
+.chungnhan {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+.chungnhan .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* Khung Chứng Nhận */
+.chungnhan-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.chungnhan-item:hover {
+    transform: scale(1.05);
+}
+
+/* Ảnh Chứng Nhận */
+.chungnhan-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Cấu trúc Grid cho 4 ảnh nằm trên 1 hàng */
+.chungnhan .row {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.chungnhan .col-md-3 {
+    flex: 0 0 calc(25% - 30px);
+    /* 4 cột trong 1 hàng */
+}
+
+/* Điều chỉnh cho các màn hình nhỏ */
+@media (max-width: 768px) {
+    .chungnhan .col-md-3 {
+        flex: 0 0 calc(50% - 15px);
+        /* 2 cột trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 576px) {
+    .chungnhan .col-md-3 {
+        flex: 0 0 100%;
+        /* 1 cột trên màn hình rất nhỏ */
+    }
+}
+
+/* Đảm bảo box-sizing chính xác */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Phần Tin Tức */
+.tintuc {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.tintuc .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* Khung tin tức */
+.tintuc-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tintuc-item:hover {
+    transform: scale(1.05);
+}
+
+/* Ảnh tin tức */
+.tintuc-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề tin tức */
+.tintuc-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Mô tả tin tức */
+.tintuc-description {
+    font-size: 1rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+    height: 70px;
+    /* Giới hạn chiều cao */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Dùng "..." khi chữ dài quá */
+}
+
+/* Cấu trúc Grid */
+.tintuc .row {
+    display: flex;
+    gap: 30px;
+    /* Tạo khoảng cách giữa các cột */
+    flex-wrap: wrap;
+    /* Cho phép cột xuống hàng nếu không đủ không gian */
+}
+
+/* Cột */
+.tintuc .col-12 {
+    flex: 0 0 100%;
+    /* 1 cột trên màn hình nhỏ */
+}
+
+/* Điều chỉnh cho màn hình lớn */
+.tintuc .col-md-3 {
+    flex: 0 0 23%;
+    /* 4 cột trên màn hình lớn */
+}
+
+/* Điều chỉnh cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .tintuc .col-md-3 {
+        flex: 0 0 48%;
+        /* 2 cột trên màn hình nhỏ */
+    }
+}
+
+/* Điều chỉnh cho màn hình cực nhỏ */
+@media (max-width: 576px) {
+    .tintuc .col-md-3 {
+        flex: 0 0 100%;
+        /* 1 cột trên màn hình cực nhỏ */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+    /* Canh giữa các icon */
+}
+
+footer .social-icon {
+    width: 50px;
+    /* Đặt kích thước cho ảnh */
+    height: 50px;
+    /* Đảm bảo ảnh luôn vuông */
+    overflow: hidden;
+}
+
+footer .social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cắt ảnh sao cho vừa khung */
+    transition: opacity 0.3s ease;
+}
+
+footer .social-icon:hover img {
+    opacity: 0.7;
+    /* Hiệu ứng mờ khi di chuột */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    footer .row {
+        text-align: center;
+    }
+
+    footer .footer-info,
+    footer .footer-contact,
+    footer .footer-hours {
+        margin-bottom: 20px;
+    }
+}

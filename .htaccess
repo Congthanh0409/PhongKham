@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Set index.php as default page
+DirectoryIndex index.php
+
+# Handle clean URLs for user-facing pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ index.php?action=$1 [L,QSA]
+
+# Handle clean URLs with parameters
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?action=$1&id=$2 [L,QSA]
+
+# Prevent direct access to sensitive directories
+RewriteRule ^(controllers|models|views|config)/ - [F,L] 
